@@ -5,6 +5,7 @@
         L.marker([13.679545, -89.235940]).bindPopup('Parroquia Cristo Negro de Esquipulas, Colón').addTo(central),
         L.marker([13.673763, -89.290332]).bindPopup('Mural Artístico, Santa Tecla').addTo(central),
         L.marker([13.672756, -89.2780983]).bindPopup('Mesón de Goya').addTo(central);
+        
 
         L.marker([13.677909, -89.263014]).bindPopup('Redondel El Platillo, Merliot').addTo(central),
         L.marker([13.661922, -89.254947]).bindPopup('Holcim, Santa Elena').addTo(central),
@@ -15,9 +16,6 @@
         L.marker([13.717870,-89.222338]).bindPopup('Monumento a la Constitución').addTo(central),
         L.marker([13.701911,-89.232715]).bindPopup('Fuentes Beethoven').addTo(central),
         L.marker([13.697734,-89.209620]).bindPopup('Gimnasio Nacional Gustavo Adolfo Pineda').addTo(central);
-
-
-
 
         var occidente = L.layerGroup();
 
@@ -30,6 +28,7 @@
         L.marker([13.494223,-89.401945]).bindPopup('El Zunzal').addTo(occidente),
         L.marker([13.829421,-89.266596]).bindPopup('Fuente Plaza Shafick Handal, Quezaltepeque').addTo(occidente),
         L.marker([13.781037,-89.737318]).bindPopup('Nahuizalco').addTo(occidente);
+
         
         var oriente = L.layerGroup();
 
@@ -42,6 +41,7 @@
         L.marker([13.480395, -88.167480]).bindPopup('Parque Pasadena').addTo(oriente),
         L.marker([13.473028, -88.171553]).bindPopup('Obelisco cuarto centenario de la fundación de San Miguel').addTo(oriente),
         L.marker([13.462224, -88.165166]).bindPopup('Metrocentro San Miguel').addTo(oriente);
+
 
         var url = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 
@@ -83,7 +83,6 @@
 
         map.addLayer(complete);
 
-        //L.control.coordinates().addTo(map);
 		//add configured controls
 		L.control.coordinates({
 			position:"bottomleft",
@@ -92,15 +91,8 @@
             labelTemplateLng:"Longitude: {x}",
 			labelTemplateLat:"Latitude: {y}"
 			
-		}).addTo(map);/*
-		L.control.coordinates({
-			position:"topright",
-			useDMS:true,
-			labelTemplateLat:"N {y}",
-			labelTemplateLng:"E {x}",
-			useLatLngOrder:true
 		}).addTo(map);
-*/
+
 
         var baseMaps = {
             "Grayscale": grayscale,
@@ -122,9 +114,9 @@
 
 
 
-        function addMarker(e){
-            // Add marker to map at click location; add popup window
-            var newMarker = new L.marker(e.latlng).addTo(map);
-            };
-
+        L.easyPrint({
+            title: 'Mi botón para imprimir',
+            position: 'bottomright',
+            elementsToHide: 'p, h2, .leaflet-control-zoom' 
+        }).addTo(map);
 
