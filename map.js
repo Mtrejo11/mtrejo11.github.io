@@ -113,10 +113,10 @@
         L.control.layers(baseLayers, overlays).addTo(map);
 
 
-/*
+
         L.easyPrint({
             title: 'Mi botón para imprimir',
             position: 'bottomright',
             elementsToHide: 'p, h2, .leaflet-control-zoom' 
         }).addTo(map);
-*/
+
